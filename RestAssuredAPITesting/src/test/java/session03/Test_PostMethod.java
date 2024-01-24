@@ -1,10 +1,11 @@
 package session03;
 
-import org.json.simple.JSONObject;
+
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import net.minidev.json.JSONObject;
 
 public class Test_PostMethod {
 
@@ -12,7 +13,7 @@ public class Test_PostMethod {
 	public void test03()
 	{
 		JSONObject jsonData = new JSONObject();
-		jsonData.put("name", "Pravin");
+		jsonData.put("name","Pravin");
 		jsonData.put("job", "QA");
 		
 		RestAssured.baseURI="https://reqres.in/api/users";

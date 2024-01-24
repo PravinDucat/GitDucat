@@ -12,8 +12,9 @@ import io.restassured.specification.RequestSpecification;
 public class AuthorizationDemo {
 
 
+	@SuppressWarnings("static-access")
 	@Test
-	public void BearerToken()
+	public <JSONObject> void BearerToken()
 	{
 		//https://gorest.co.in/public/v2/users
 		//create requsest specification
@@ -30,10 +31,16 @@ public class AuthorizationDemo {
 			}*/
 		
 		JSONObject payload = new JSONObject();
-		payload.put("name", "prachigupta");
-		payload.put("gender", "Female");
-		payload.put("email", "prachigupta123@gmail.com");
-		payload.put("status", "Active");
+		((RestAssured) payload).put("name", "pravin");
+		((RestAssured) payload).put("gender", "male");
+		((RestAssured) payload).put("email", "aug25praveen@gmail.com");
+		((RestAssured) payload).put("status", "Active");
+		
+		/* JSONObject payload = new JSONObject(); origional
+		payload.put("name", "pravin");
+		payload.put("gender", "male");
+		payload.put("email", "aug25praveen@gmail.com");
+		payload.put("status", "Active");*/
 		
 		String AuthToken = "Bearer 866218be3a275e793abe788f9a83a53da434004c5718abdc6215cd26d5fc6be2bhh";
 	

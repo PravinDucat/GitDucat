@@ -36,8 +36,9 @@ public class Test_GetMethod {
 		baseURI="https://reqres.in/api/users";
 		given()
 		.queryParam("page", "2")
-		.when().get()
+		.when().get(baseURI)
 		.then().statusCode(208);
+		//.then().statusCode(200);
 		
 	}
 	
